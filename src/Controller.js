@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 export const createNewChat = (setMessage, setValue, setCurrentTitle) => {
   setMessage(null);
   setValue("");
@@ -33,7 +32,7 @@ export const getMessages = async (
   };
 
   try {
-    const response = await fetch("http://localhost:8000/completions", options);
+    const response = await fetch("http://localhost:8001/completions", options);
 
     let dataToSave = await (
       await fetch("http://localhost:8000/datas", {
