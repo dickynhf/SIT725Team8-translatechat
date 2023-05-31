@@ -114,7 +114,17 @@ const App = () => {
         </ul>
         <div className="bottom-section">
           <div className="input-container">
-            <input value={value} onChange={(e) => setValue(e.target.value)} />
+            <input
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+              onKeyPress={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault(); // Prevents the default action of the key press
+                  getMessages();
+                  setValue(""); // Clears the input field
+                }
+              }}
+            />
             <div id="submit" onClick={getMessages}>
               ➢
             </div>

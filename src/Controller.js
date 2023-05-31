@@ -32,10 +32,10 @@ export const getMessages = async (
   };
 
   try {
-    const response = await fetch("http://localhost:8001/completions", options);
+    const response = await fetch("http://localhost:3000/completions", options);
 
     let dataToSave = await (
-      await fetch("http://localhost:8000/datas", {
+      await fetch("http://localhost:3000/datas", {
         method: options.method,
         body: JSON.stringify({
           request: value,
