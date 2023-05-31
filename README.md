@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# TranslateGPT App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TranslateGPT is a React-based application that leverages the power of GPT-3 to provide a chat interface for language translation. The application allows users to input text and receive translations from the GPT-3 model. It also maintains a history of chat conversations that users can revisit or delete as needed.
 
-## Available Scripts
+## Functionality Overview
 
-In the project directory, you can run:
+### Creating a New Chat
 
-### `npm start`
+Users can start a new chat conversation by clicking the "Add New Chat" button. This action clears the current chat window and prepares the application for a new conversation.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Inputting Text
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Users can input text into a provided input field. The text is then sent to the GPT-3 model for translation when the user presses the Enter key or clicks the submit button (➢). The input field is cleared after the text is sent.
 
-### `npm test`
+### Receiving Translations
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The application sends the user's input to a GPT-3 model via a POST request to a local server. The server then returns the model's translation, which is displayed in the chat window.
 
-### `npm run build`
+### Viewing Chat History
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The application maintains a history of chat conversations. Each conversation is associated with a unique title, which is initially the same as the user's first message in that conversation. The titles of all past conversations are displayed in a sidebar, and users can click on a title to view the corresponding conversation.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Deleting Chat History
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Users can delete a specific chat history by clicking the "Delete" button next to the chat's title in the sidebar. This action removes the chat from the history.
 
-### `npm run eject`
+## Technical Details
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The application uses several key React features, including state and effects. State variables are used to keep track of the user's input, the GPT-3 model's translations, and the chat history. Effects are used to update the chat history whenever a new translation is received.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The application also uses the Fetch API to send HTTP requests to the local server. The server is responsible for communicating with the GPT-3 model and returning the model's translations.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Starting the App
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+TranslateGPT is comprised of a frontend and a backend, which need to be started separately.
 
-## Learn More
+### Starting the Frontend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To start the frontend of the application, you'll use npm. Navigate to the root directory of the frontend code in your terminal, and then run the following command:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```shell
+npm run start:frontend
+```
 
-### Code Splitting
+This will start the React application on your local machine.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Starting the Backend
 
-### Analyzing the Bundle Size
+The backend of TranslateGPT uses Node.js. To start it, navigate to the directory containing the server.js file in your terminal.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Then, run the following command:
 
-### Making a Progressive Web App
+```shell
+npx nodemon server.js
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This will start the server on your local machine, which will begin listening for requests from the frontend.
 
-### Advanced Configuration
+Please ensure both the frontend and backend are running simultaneously for the application to function correctly.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Conclusion
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+TranslateGPT is a powerful tool for language translation, harnessing the capabilities of GPT-3 in a user-friendly chat interface. Its ability to maintain and manage chat history allows users to easily revisit past conversations, making it a versatile tool for language learning and practice.

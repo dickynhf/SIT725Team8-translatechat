@@ -19,7 +19,7 @@ const App = () => {
   };
 
   // const deleteChatHistory = (titleToDelete) => {
-  //   setPreviousChats((previousChats) =>
+  //   setPreviousChats(
   //     previousChats.filter((chat) => chat.title !== titleToDelete)
   //   );
   // };
@@ -92,9 +92,6 @@ const App = () => {
               <span onClick={() => handleClick(uniqueTitles)}>
                 {uniqueTitles}
               </span>
-              {/* <button onClick={() => deleteChatHistory(uniqueTitles)}>
-                Delete
-              </button> */}
             </li>
           ))}
         </ul>
@@ -114,17 +111,7 @@ const App = () => {
         </ul>
         <div className="bottom-section">
           <div className="input-container">
-            <input
-              value={value}
-              onChange={(e) => setValue(e.target.value)}
-              onKeyPress={(e) => {
-                if (e.key === "Enter") {
-                  e.preventDefault(); // Prevents the default action of the key press
-                  getMessages();
-                  setValue(""); // Clears the input field
-                }
-              }}
-            />
+            <input value={value} onChange={(e) => setValue(e.target.value)} />
             <div id="submit" onClick={getMessages}>
               ➢
             </div>
