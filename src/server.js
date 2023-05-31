@@ -2,13 +2,13 @@ const PORT = 8000;
 const express = require("express");
 const cors = require("cors");
 const Database = require("./config/Database");
-const { data } = require("../model");
+const { data } = require("./model");
 require("dotenv").config();
 const app = express();
 app.use(express.json());
 app.use(cors());
 const { API_KEY } = process.env;
-const fetch = require("node-fetch");
+// const fetch = require("node-fetch");
 
 app.post("/completions", async (req, res) => {
   const options = {
