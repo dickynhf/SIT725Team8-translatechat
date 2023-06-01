@@ -15,6 +15,39 @@ body {
   display: flex;
 }
 
+/* Center the container */
+.container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  height: 100vh;
+  padding: 10px;
+}
+
+/* Style the login button */
+#login-button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Style the register button */
+#register-button {
+  background-color: #ccc;
+  color: #000;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Rest of the CSS code remains the same */
+
 .side-bar {
   background-color: #202123;
   height: 100vh;
